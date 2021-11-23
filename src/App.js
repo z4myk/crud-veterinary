@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { Card } from "./components/Card";
 import { Form } from "./components/Form";
-
+import 'animate.css';
 function App() {
   const [consulta, setConsulta] = useState({
     mascota: "",
     dueño: "",
-    tipo:"",
     informacion: "",
     fecha: "",
     hora: "",
@@ -27,42 +26,35 @@ function App() {
     setConsulta({
       mascota: "",
       dueño: "",
-      tipo: "",
       informacion: "",
       fecha: "",
       hora: "",
       id: "",
     });
-    e.target.reset()
+    e.target.reset();
   };
 
   const eliminarConsulta = (id) => {
-    let consultaFiltrada = consultas.filter(item => item.id !== id);
-    setConsultas(consultaFiltrada)
-    console.log(id)
+    let consultaFiltrada = consultas.filter((item) => item.id !== id);
+    setConsultas(consultaFiltrada);
+    console.log(id);
   };
 
   return (
     <>
       <div className="row container">
         <div className="col-md-7 col-sm-12">
-          <Form 
-          consulta={consulta}
-          setConsulta={setConsulta}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
+          <Form
+            consulta={consulta}
+            setConsulta={setConsulta}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
           />
         </div>
         <div className="col-md-5 col-sm-12">
-        <Card
-          consultas={consultas}
-          eliminarConsulta={eliminarConsulta}
-          />
+          <Card consultas={consultas} eliminarConsulta={eliminarConsulta} />
         </div>
-        <div className="text-center">
-         
-        </div>
-       
+        <div className="text-center"></div>
       </div>
     </>
   );

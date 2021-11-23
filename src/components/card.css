@@ -1,13 +1,19 @@
-.carta{
-    border: 2px solid rgb(0, 195, 255);
-    width: 340px;
-    height: 340px;
-    margin: 5px 5px 5px 5px;
-    padding: 10px 10px 10px 10px;
-    box-shadow: 5px 5px 5px 5px gray;
+.carta {
+  border: 2px solid rgb(0, 0, 0);
+  width: 340px;
+  height: 340px;
+  margin: 5px 5px 5px 5px;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 5px 5px gray;
 }
 
-.circulo{
-    border-radius: 90px;
-    width: 40px;
+.circulo {
+  border-radius: 90px;
+  width: 50px;
+}
+
+.fondo{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/003/541/496/original/dog-paw-seamless-pattern-with-hearts-cute-valentine-wallpaper-background-for-pet-shop-vet-goods-for-pet-package-kitten-cat-dog-paw-silhouette-ornament-on-white-vector.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
