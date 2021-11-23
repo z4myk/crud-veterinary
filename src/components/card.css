@@ -1,0 +1,13 @@
+.carta{
+    border: 2px solid rgb(0, 195, 255);
+    width: 340px;
+    height: 340px;
+    margin: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+.circulo{
+    border-radius: 90px;
+    width: 40px;
+}
