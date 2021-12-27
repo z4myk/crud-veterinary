@@ -14,7 +14,7 @@ export const Card = (props) => {
                 #{item.id} <i class="fas fa-paw"></i>
               </span>
             </div>
-            <h5 className="card-title text-center text-dark">Nombre: {item.mascota}</h5>
+            <h5 className="card-title text-center text-dark ">Nombre: <b className="text-danger">{item.mascota}</b></h5>
             <h6 className="card-subtitle mb-2 text-muted text-center">
               Dueño: {item.dueño}
             </h6>
@@ -32,12 +32,20 @@ export const Card = (props) => {
               <i class="fas fa-clock text-danger"></i> Hora: {item.hora}
             </p>
             <hr className="text-primary" />
+            <div className="d-flex justify-content-between">
             <button
               className="btn btn-danger"
-              onClick={(id) => props.eliminarConsulta(item.id)}
+              onClick={() => props.eliminarConsulta(item.id)}
             >
               Eliminar
             </button>
+            <button 
+            className="btn btn-warning"
+            onClick={() => props.prepararConsulta(item)}
+            >
+            Editar
+            </button>
+            </div>
           </div>
         </div>
       ))}

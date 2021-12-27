@@ -54,9 +54,11 @@ export const Form = (props) => {
           name="id"
           onChange={props.handleChange}
         />
+
         <button className="btn btn-primary w-100 my-2" type="submit">
           Enviar
         </button>
+        
       </form>
     </div>
   );
