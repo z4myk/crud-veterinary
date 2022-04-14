@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-
+import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom"
 export const EditForm = (props) => {
 
   const [consulta, setConsulta] = useState(props.currentConsulta)
@@ -10,12 +10,25 @@ export const EditForm = (props) => {
   };
 
 
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+
+    props.setConsultas(consulta)
+
+  }
+
+  useEffect(() => {
+    setConsulta(props.currentConsulta)
+  },[props])
+
+
   return (
     <>
-      <div className="animate__animated animate__fadeInLeft">
+      <div className="animate__animated animate__fadeInLeft w-50 container">
         <h2 className="text-center my-4">Editar paciente</h2>
         <hr className="text-primary" />
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <label className="my-2">Nombre de mascota:</label>
           <input
             className="form-control w-100 border-primary"
@@ -61,18 +74,11 @@ export const EditForm = (props) => {
             value={consulta.hora}
             onChange={handleChange}
           />
-          <label className="my-2">Numero:</label>
-          <input
-            className="form-control w-100 border-primary"
-            type="number"
-            placeholder="1"
-            name="id"
-            value={consulta.id}
-            onChange={handleChange}
-          />
-          <button className="btn btn-primary w-100 my-2" type="submit" onClick={props.updateConsulta} >
-            Editar  
+          <Link to='/turnos'>
+          <button className="btn btn-primary w-100 my-2" onClick={() => props.updateConsulta(consulta.id, consulta)}>
+            Editar
           </button>
+          </Link> 
         </form>
       </div>
     </>

@@ -1,18 +1,23 @@
 import React from "react";
 
-export const Form = (props) => {
+export const Form = ({handleSubmit, handleChange}) => {
+
+
+
+
   return (
-    <div className="animate__animated animate__fadeInLeft">
-      <h2 className="text-center my-4">Administrador pacientes veterinaria</h2>
+    <div className="animate__animated animate__fadeInLeft mb-4 w-50 container">
+      <h2 className="text-center my-4">Administrador de pacientes para veterinaria</h2>
       <hr className="text-primary" />
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label className="my-2">Nombre de mascota:</label>
         <input
           className="form-control w-100 border-primary"
           type="text"
           placeholder="nombre"
           name="mascota"
-          onChange={props.handleChange}
+          onChange={handleChange}
+          required
         />
         <label className="my-2">Nombre de dueño:</label>
         <input
@@ -20,7 +25,8 @@ export const Form = (props) => {
           type="text"
           placeholder="Nombre de dueño"
           name="dueño"
-          onChange={props.handleChange}
+          onChange={handleChange}
+          required
         />
         <label className="my-2">Sintomas:</label>
         <input
@@ -28,7 +34,8 @@ export const Form = (props) => {
           type="text"
           placeholder="informacion"
           name="informacion"
-          onChange={props.handleChange}
+          onChange={handleChange}
+          required
         />
         <label className="my-2">Fecha:</label>
         <input
@@ -36,7 +43,8 @@ export const Form = (props) => {
           type="date"
           name="fecha"
           placeholder=""
-          onChange={props.handleChange}
+          onChange={handleChange}
+          required
         />
         <label className="my-2">Hora:</label>
         <input
@@ -44,7 +52,8 @@ export const Form = (props) => {
           type="time"
           name="hora"
           placeholder="Hora"
-          onChange={props.handleChange}
+          onChange={handleChange}
+          required
         />
         <label className="my-2">Numero:</label>
         <input
@@ -52,7 +61,8 @@ export const Form = (props) => {
           type="number"
           placeholder="1"
           name="id"
-          onChange={props.handleChange}
+          onChange={handleChange}
+          required
         />
 
         <button className="btn btn-primary w-100 my-2" type="submit">

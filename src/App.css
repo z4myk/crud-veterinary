@@ -1,0 +1,25 @@
+
+.logo{
+    width: 60px;
+
+}
+
+.footer {
+   padding: 1em 0;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   
+  }
+
+.menu{
+    cursor: pointer;
+}
+
+
+body{
+    margin: 0;
+    position: relative;
+    padding-bottom: 5em;
+    min-height:100vh ;
+}
